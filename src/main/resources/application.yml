@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    banner-mode: off
+  banner:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/reggie?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 3170590090
+    type: com.alibaba.druid.pool.DruidDataSource
+
+logging:
+  level:
+    root: info
+
+#配置mybatis-plus
+mybatis-plus:
+  configuration:
+    #在映射实体或属性时，将数据库中的表名和字段名的下划线去掉，按照驼峰命名去映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: assign_id
+
+reggie:
+  path: D:\img\
